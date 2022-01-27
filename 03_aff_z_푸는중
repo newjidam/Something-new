@@ -1,0 +1,26 @@
+#include <unistd.h>
+
+int main()
+
+{
+
+  char 
+  string
+  
+  if (조건식)
+  {
+    출력할 것
+  }  
+
+  else if (조건식)
+  {
+    출력할 것
+  }
+
+  else (조건식)
+  {
+    출력할 것
+  }
+  
+  return (0);
+}
