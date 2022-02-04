@@ -1,0 +1,46 @@
+#include <unistd.h>
+
+void	ft_putchar(char c);
+
+char	ft_return_char(int x_max, int y_max, int x_chu, int y_chu)
+{
+	if ((x_chu == 1 && y_chu == 1)
+		|| (x_chu == 1 && y_chu == y_max))
+		return ('A');
+	else if ((x_chu == x_max && y_chu == 1)
+		|| (x_chu == x_max && y_chu == y_max))
+		return ('C');
+	else
+	{
+		if ((x_chu > 1 && y_chu == 1)
+			|| (x_chu > 1 && y_chu == y_max))
+			return ('B');
+		else if ((x_chu == 1 && y_chu > 1)
+			|| (x_chu == x_max && y_chu > 1))
+			return ('B');
+		else
+			return (' ');
+	}
+}
+
+void	rush(int x, int y)
+{
+	int	x_chu;
+	int	y_chu;
+
+	if (x <= 0 || y <= 0)
+		return ;
+	y_chu = 1;
+	while (y_chu <= y)
+	{
+		x_chu = 1;
+		while (x_chu <= x)
+		{
+			ft_putchar(ft_return_char(x, y, x_chu, y_chu));
+			x_chu++;
+		}
+		y_chu++;
+		write(1, "\n", 1);
+	}
+}
+
